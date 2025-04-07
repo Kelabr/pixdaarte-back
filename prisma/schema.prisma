@@ -8,9 +8,10 @@ datasource db {
 }
 
 model users {
-  id         Int      @id(map: "id_pk") @default(autoincrement())
-  name       String   @db.VarChar
-  email      String   @unique(map: "email_uni") @db.VarChar
-  date_birth DateTime @db.Date
-  password   String   @db.VarChar
+  nome      String
+  email     String @unique
+  chave_pix String @unique
+  cidade    String
+  senha     String
+  id        Int    @id @default(autoincrement())
 }
