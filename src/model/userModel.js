@@ -7,8 +7,11 @@ async function getUsers(){
 }
 
 async function createUser(nome, email, pix, cidade, senha){
+
+    let user 
+    
     try{
-        await prisma.users.create({
+       user = await prisma.users.create({
             data:{
                 nome:nome,
                 email:email,
@@ -22,7 +25,7 @@ async function createUser(nome, email, pix, cidade, senha){
         return
     }
 
-    return "Usuário Cadastrado"
+    return user
 
 }
 
