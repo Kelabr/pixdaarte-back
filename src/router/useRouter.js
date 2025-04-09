@@ -6,4 +6,6 @@ export default function useRouter(app,options){
 
     app.post("/create", userController.createUserController)
 
+    app.post("/login", userController.login)
+
 }

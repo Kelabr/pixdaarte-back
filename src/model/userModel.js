@@ -29,5 +29,23 @@ async function createUser(nome, email, pix, cidade, senha){
 
 }
 
+async function loginUser(email, senha){
+    let user
 
-export {getUsers, createUser}
+    try{
+        user = await prisma.users.findUnique({
+            where:{
+                email:email
+            }
+        })
+            
+        }catch(error){
+            console.error("Erro ao fazer login", error)
+        }
+
+        return user
+
+}
+
+
+export {getUsers, createUser, loginUser}
